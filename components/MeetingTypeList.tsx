@@ -21,7 +21,7 @@ const MeetingTypeList = () => {
   const {user} = useUser();
   const client = useStreamVideoClient();
   const [values,setValues]= useState({
-    dataTime: new Date(),
+    dateTime: new Date(),
     description: '',
     link: ''
   })
@@ -34,7 +34,7 @@ const MeetingTypeList = () => {
      if(!client || !user) return;
      try{
 
-      if(!values.dataTime){
+      if(!values.dateTime){
         toast({title: "Please select a date and time" })
         return;
       }
@@ -44,7 +44,7 @@ const MeetingTypeList = () => {
     
 if(!call) throw new Error('Failed to create call')
     
-    const startsAt = values.dataTime.toISOString() || new Date(Date.now()).toISOString();
+    const startsAt = values.dateTime.toISOString() || new Date(Date.now()).toISOString();
     const description = values.description || 'Instant meeting'; 
 
     await call.getOrCreate({
