@@ -18,7 +18,8 @@ interface MeetingModelProps {
   title: string;
   className?: string;
   children?: ReactNode;
-  handleClick?: string;
+  // handleClick?: string;
+  handleClick?: () => void;
   image?: string;
   buttonIcon?: string;
   buttonText?:string;
