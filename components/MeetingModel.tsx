@@ -21,9 +21,10 @@ interface MeetingModelProps {
   handleClick?: string;
   image?: string;
   buttonIcon?: string;
+  buttonText?:string;
 }
 
-const MeetingModel = ({
+const MeetingModel: React.FC<MeetingModelProps> = ({
   isOpen,
   onClose,
   title,
